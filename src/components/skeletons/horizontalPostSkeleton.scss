@@ -1,0 +1,57 @@
+.horizontal-post-skeleton {
+  display: flex;
+  margin: 2rem auto 0 auto;
+  width: Min(1000px, calc(100% - 2rem));
+  border-radius: 5px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.192);
+
+  &__img {
+    width: 65%;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    background-color: blueviolet;
+    animation: fadeIn 2s linear infinite;
+  }
+
+  &__wrapper {
+    flex: 1;
+    display: flex;
+    padding: 1em;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__profile-img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: blueviolet;
+    animation: fadeIn 2s linear infinite;
+  }
+
+  &__user {
+    width: 100%;
+    height: 3rem;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    background-color: blueviolet;
+    animation: fadeIn 2s linear infinite;
+  }
+
+  &__comments {
+    overflow-y: auto;
+    height: 23rem;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    background-color: blueviolet;
+  }
+  50% {
+    background-color: #8a2be270;
+  }
+  100% {
+    background-color: blueviolet;
+  }
+}

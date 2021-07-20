@@ -1,0 +1,42 @@
+.horizontal-post {
+  display: flex;
+  margin: 2rem auto 0 auto;
+  width: Min(1000px, calc(100% - 2rem));
+  border-radius: 5px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.192);
+
+  &__img {
+    width: 65%;
+    object-fit: cover;
+    object-position: center;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+
+  &__wrapper {
+    flex: 1;
+    display: flex;
+    padding: 1em;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__text {
+    padding-top: 1em;
+  }
+
+  &__profile-img {
+    width: 2.5rem;
+    border-radius: 50%;
+  }
+
+  &__caption {
+    border-bottom: 1px solid #00000021;
+    padding-bottom: 1em;
+  }
+
+  &__comments {
+    overflow-y: auto;
+    height: 23rem;
+  }
+}

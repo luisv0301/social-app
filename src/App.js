@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import LogIn from "./pages/LogIn";
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import HorizontalPost from "./pages/HorizontalPost";
+import PrivateRoute from "./pages/PrivateRoute";
+import UserProvider from "./context/UserProvider";
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserProvider>
+      <Switch>
+        <PrivateRoute path="/" component={Home} exact />
+        <Route path="/login" component={LogIn} />
+        <Route path="/profile/:displayName" component={Profile} />
+        <Route path="/post/:id" component={HorizontalPost} />
+      </Switch>
+    </UserProvider>
   );
 }
 

@@ -1,0 +1,42 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  border-bottom: 1.5px solid #00000024;
+
+  &__logo {
+    color: #7c3aed;
+  }
+
+  &__items {
+    display: flex;
+    align-items: center;
+  }
+
+  &__button {
+    height: fit-content;
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    background-color: #7c3aed;
+    color: whitesmoke;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    margin-left: 1rem;
+    button {
+      padding: 0;
+      display: flex;
+      background-color: transparent;
+    }
+    svg {
+      width: 2rem;
+      color: #ced1d6;
+    }
+  }
+}

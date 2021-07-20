@@ -1,0 +1,51 @@
+.aside {
+  height: 100vh;
+  position: relative;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.068);
+
+  &__profile-pic {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+  }
+
+  &__header {
+    padding: 2em;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.103);
+  }
+
+  &__username {
+    margin: 0.5rem 0;
+  }
+
+  &__email {
+    margin: 0;
+  }
+
+  &__item {
+    padding: 1em 2em;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    &:hover svg {
+      color: #7c3aed;
+    }
+
+    &--bottom {
+      background-color: transparent;
+      position: absolute;
+      bottom: 0;
+      padding: 2em;
+    }
+
+    svg {
+      width: 2rem;
+      margin-right: 1rem;
+      color: #ced1d6;
+    }
+  }
+}
