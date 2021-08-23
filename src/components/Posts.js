@@ -1,36 +1,16 @@
-import "./posts.scss";
+import usePosts from "../hooks/usePosts";
+
 import Post from "./Post";
 import PostSkeleton from "./skeletons/PostSkeleton";
-import { db } from "../firebaseConfig";
-import { useState, useEffect } from "react";
+
+import "./posts.scss";
 
 export default function Posts() {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  console.log("se esta renderizando el componente home...", posts);
-
-  useEffect(() => {
-    console.log("data listener...");
-    const unsubscribe = db
-      .collection("posts")
-      .orderBy("createdAt", "desc")
-      .onSnapshot((post) => {
-        console.log("el console desde posts listeners..");
-        const data = post.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setPosts(data);
-        setLoading(false);
-      });
-
-    return () => unsubscribe();
-  }, []);
+  const { posts, isLoading } = usePosts();
 
   return (
     <main className="posts">
-      {loading && (
+      {isLoading && (
         <>
           <PostSkeleton />
           <PostSkeleton />

@@ -1,12 +1,14 @@
 .horizontal-post {
   display: flex;
-  margin: 2rem auto 0 auto;
+  flex-wrap: wrap;
+  margin: 2rem auto;
   width: Min(1000px, calc(100% - 2rem));
   border-radius: 5px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.192);
 
   &__img {
     width: 65%;
+    flex: 1;
     object-fit: cover;
     object-position: center;
     border-top-left-radius: 6px;
@@ -14,15 +16,11 @@
   }
 
   &__wrapper {
-    flex: 1;
+    flex: 1 1 350px;
     display: flex;
     padding: 1em;
     flex-direction: column;
     justify-content: space-between;
-  }
-
-  &__text {
-    padding-top: 1em;
   }
 
   &__profile-img {
@@ -30,13 +28,40 @@
     border-radius: 50%;
   }
 
-  &__caption {
+  &__description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid #00000021;
     padding-bottom: 1em;
   }
 
+  &__button {
+    display: flex;
+    padding: 0;
+    background-color: transparent;
+    width: 2rem;
+    height: 2rem;
+
+    svg {
+      width: 1.5rem;
+      color: #c4b5fd;
+    }
+    &:focus svg {
+      color: #7c3aedb4;
+    }
+  }
+
   &__comments {
     overflow-y: auto;
-    height: 23rem;
+    height: 8rem;
+  }
+
+  &__comment {
+    margin-bottom: 0.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }

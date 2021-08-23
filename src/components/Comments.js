@@ -1,28 +1,12 @@
-import firebase from "firebase";
-import { useState } from "react";
-import { db } from "../firebaseConfig";
-
+import { useUser } from "../context/UserProvider";
+import useComment from "../hooks/useComment";
 import "./comments.scss";
 
-export default function Comments({ displayName, id }) {
-  const [comment, setComment] = useState("");
-
-  const addComment = (e) => {
-    e.preventDefault();
-    db.collection("posts")
-      .doc(id)
-      .update({
-        comments: firebase.firestore.FieldValue.arrayUnion({
-          comment,
-          user: displayName,
-        }),
-      })
-      .then(() => {
-        console.log("comentario añadido con exito");
-        setComment("");
-      })
-      .catch((err) => console.log("error al añadir comentario", err));
-  };
+export default function Comments({ postID }) {
+  const {
+    user: { displayName },
+  } = useUser();
+  const { comment, setComment, addComment } = useComment(postID, displayName);
 
   return (
     <form className="comments">
@@ -43,6 +27,7 @@ export default function Comments({ displayName, id }) {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
+          aria-hidden="true"
         >
           <path
             fillRule="evenodd"

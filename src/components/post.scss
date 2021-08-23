@@ -12,6 +12,16 @@
     border-top-left-radius: 6px;
   }
 
+  &__text {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &__likes {
+    display: flex;
+    align-items: flex-end;
+  }
   &__profile-img {
     width: 2.5rem;
     border-radius: 50%;

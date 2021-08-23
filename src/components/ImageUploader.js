@@ -4,8 +4,8 @@ import firebase from "firebase";
 import { useState } from "react";
 import { useUser } from "../context/UserProvider";
 
-export default function ImageUploader({ cancelPost }) {
-  const [caption, setCaption] = useState(null);
+export default function ImageUploader({ dismissPopup }) {
+  const [caption, setCaption] = useState("");
   const [image, setImage] = useState(null);
   const [uploadingPost, setUploadingPost] = useState(false);
   const {
@@ -40,12 +40,13 @@ export default function ImageUploader({ cancelPost }) {
               photoURL,
               uid,
               caption,
+              likes: 0,
               image: url,
               createdAt: firebase.firestore.FieldValue.serverTimestamp(),
             })
             .then(() => {
               setUploadingPost(false);
-              cancelPost();
+              dismissPopup();
             })
             .catch((err) => console.log("ocurrio un error", err));
         });
@@ -90,7 +91,7 @@ export default function ImageUploader({ cancelPost }) {
             </button>
             <button
               type="button"
-              onClick={cancelPost}
+              onClick={dismissPopup}
               className="image-uploader__button image-uploader__button--cancel"
             >
               Cancel
