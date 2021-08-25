@@ -7,12 +7,15 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.192);
 
   &__img {
-    height: 350px;
-    flex: 1 1 650px;
+    height: 450px;
+    flex: 1.5 1 500px;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
     background-color: blueviolet;
     animation: fadeIn 2s linear infinite;
+    @media (max-width: 881px) {
+      border-radius: 5px;
+    }
   }
 
   &__wrapper {

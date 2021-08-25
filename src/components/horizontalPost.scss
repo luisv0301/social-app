@@ -7,12 +7,15 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.192);
 
   &__img {
-    width: 65%;
-    flex: 1;
+    height: 450px;
+    flex: 1.5 1 500px;
     object-fit: cover;
     object-position: center;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
+    @media (max-width: 881px) {
+      border-radius: 5px;
+    }
   }
 
   &__wrapper {
@@ -54,7 +57,11 @@
 
   &__comments {
     overflow-y: auto;
-    height: 8rem;
+    height: 14rem;
+
+    @media (max-width: 881px) {
+      height: 6rem;
+    }
   }
 
   &__comment {
