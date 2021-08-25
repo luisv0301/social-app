@@ -1,0 +1,6 @@
+.profile-posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(Min(24rem, 100%), 1fr));
+  gap: 1.5rem;
+  padding-bottom: 1em;
+}

@@ -1,0 +1,16 @@
+.inline-message {
+  background-color: #d1fae5;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  z-index: 3;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 2px 5px 27px #34d39959;
+  svg {
+    width: 1.5rem;
+    color: #34d399;
+    margin-right: 0.5rem;
+  }
+}

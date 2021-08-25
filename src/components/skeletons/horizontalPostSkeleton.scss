@@ -1,12 +1,14 @@
 .horizontal-post-skeleton {
   display: flex;
-  margin: 2rem auto 0 auto;
+  flex-wrap: wrap;
+  margin: 2rem auto;
   width: Min(1000px, calc(100% - 2rem));
   border-radius: 5px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.192);
 
   &__img {
-    width: 65%;
+    height: 350px;
+    flex: 1 1 650px;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
     background-color: blueviolet;
@@ -14,7 +16,11 @@
   }
 
   &__wrapper {
-    flex: 1;
+    flex: 1 1 350px;
+    display: flex;
+    padding: 1em;
+    flex-direction: column;
+    justify-content: space-between;
     display: flex;
     padding: 1em;
     flex-direction: column;
@@ -40,7 +46,6 @@
 
   &__comments {
     overflow-y: auto;
-    height: 23rem;
   }
 }
 

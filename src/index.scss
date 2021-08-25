@@ -21,7 +21,11 @@ dl,
 dd {
   margin: 0;
 }
-
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
 h1 {
   font-size: 4rem;
   line-height: 1.1;
@@ -63,8 +67,8 @@ html:focus-within {
 body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: "DM Sans", sans-serif;
-  color: #4b5563;
+  font-family: "Nunito", sans-serif;
+  color: #111827;
   background-color: #f3f4f6;
 }
 

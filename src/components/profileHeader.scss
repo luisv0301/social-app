@@ -1,0 +1,16 @@
+.profile-header {
+  display: flex;
+  margin-bottom: 2rem;
+  align-items: center;
+  &__img {
+    width: 5rem;
+    border-radius: 50%;
+  }
+  &__text {
+    margin-left: 1rem;
+  }
+
+  &__user {
+    margin: 0;
+  }
+}

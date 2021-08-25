@@ -6,27 +6,31 @@ import Modal from "./Modal";
 import ImageUploader from "./ImageUploader";
 
 import "./nav.scss";
+import InlineMessage from "./InlineMessage";
 
 export default function Nav() {
-  const [modal, setModal] = useState(false);
+  const [isModalActive, setIsModalActive] = useState(false);
+  const [isInlineMessageActive, setIsInlineMessageActive] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const {
     user: { displayName, photoURL, signOutWithGoogle },
   } = useUser();
-  console.log(isMenuOpen);
 
   return (
     <>
       <nav className="nav">
         <h4 className="nav__logo"> Instagram </h4>
         <div className="nav__items">
-          <button className="nav__button" onClick={() => setModal(true)}>
+          <button
+            className="nav__button"
+            onClick={() => setIsModalActive(true)}
+          >
             Add post
           </button>
           <div className="nav__menu">
             <button
               aria-haspopup="true"
-              className="nav__button nav__button--menu"
+              className="nav__profile"
               onClick={() => setIsMenuOpen((prev) => !prev)}
             >
               <img
@@ -82,12 +86,17 @@ export default function Nav() {
           </div>
         </div>
       </nav>
-      <Modal modal={modal}>
+      <Modal isModalActive={isModalActive}>
         <ImageUploader
-          modalState={modal}
-          dismissPopup={() => setModal(false)}
+          dismissModal={() => setIsModalActive(false)}
+          activateInlineMessage={() => setIsInlineMessageActive(true)}
         />
       </Modal>
+      {isInlineMessageActive && (
+        <InlineMessage
+          dismissInlineMessage={() => setIsInlineMessageActive(false)}
+        />
+      )}
     </>
   );
 }

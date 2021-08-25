@@ -13,7 +13,7 @@ export default function Post({
   comments,
 }) {
   return (
-    <div className="post">
+    <article className="post">
       <img src={image} alt={caption} className="post__img" />
       <div className="post__wrapper">
         <div className="post__text">
@@ -38,6 +38,6 @@ export default function Post({
         </Link>
         <Comments postID={id} />
       </div>
-    </div>
+    </article>
   );
 }

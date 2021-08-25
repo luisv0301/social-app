@@ -4,7 +4,7 @@ import firebase from "firebase";
 import { useState } from "react";
 import { useUser } from "../context/UserProvider";
 
-export default function ImageUploader({ dismissPopup }) {
+export default function ImageUploader({ dismissModal, activateInlineMessage }) {
   const [caption, setCaption] = useState("");
   const [image, setImage] = useState(null);
   const [uploadingPost, setUploadingPost] = useState(false);
@@ -46,7 +46,8 @@ export default function ImageUploader({ dismissPopup }) {
             })
             .then(() => {
               setUploadingPost(false);
-              dismissPopup();
+              dismissModal();
+              activateInlineMessage();
             })
             .catch((err) => console.log("ocurrio un error", err));
         });
@@ -56,9 +57,23 @@ export default function ImageUploader({ dismissPopup }) {
 
   return (
     <div className="image-uploader">
-      <h3 className="image-uploader__tittle">Make a new post</h3>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="image-uploader__icon"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+        />
+      </svg>
+      <h3 className="image-uploader__title">Make a new post</h3>
       <form className="image-uploader__form">
-        <label htmlFor="caption">Write a caption</label>
+        <label htmlFor="caption">Write a caption:</label>
         <input
           type="text"
           className="image-uploader__input"
@@ -91,7 +106,7 @@ export default function ImageUploader({ dismissPopup }) {
             </button>
             <button
               type="button"
-              onClick={dismissPopup}
+              onClick={dismissModal}
               className="image-uploader__button image-uploader__button--cancel"
             >
               Cancel

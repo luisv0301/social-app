@@ -19,12 +19,21 @@
     height: fit-content;
     padding: 0.5em 1em;
     border-radius: 6px;
-    background-color: #7c3aed;
-    color: whitesmoke;
-    &--menu {
-      padding: 0;
-      background-color: transparent;
-      margin-left: 1rem;
+    background-color: #ddd6fe;
+    color: #4c1d95;
+    transition: background-color 450ms;
+    &:hover {
+      background-color: #8b5cf6;
+      color: #f5f3ff;
+    }
+  }
+  &__profile {
+    padding: 0.25rem;
+    background-color: transparent;
+    margin-left: 0.25rem;
+    border-radius: 50%;
+    &:focus {
+      outline: #8b5cf6;
     }
   }
   &__menu {
@@ -42,7 +51,8 @@
     padding: 1rem;
     margin: 0;
     background: #fbfdfd;
-    box-shadow: 0 1px 14px #0000000a;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     border-radius: 5px;
     &::after {
       content: "";
@@ -68,6 +78,7 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0;
+    width: 100%;
     margin: 0;
     background-color: transparent;
 
