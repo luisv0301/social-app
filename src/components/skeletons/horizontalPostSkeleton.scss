@@ -1,3 +1,20 @@
+%animation {
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: rgb(196, 181, 253);
+    background: linear-gradient(
+      110deg,
+      rgba(196, 181, 253, 1) 11%,
+      rgba(241, 239, 250, 1) 47%,
+      rgba(196, 181, 253, 1) 76%
+    );
+    animation: fade 2s linear infinite;
+  }
+}
+
 .horizontal-post-skeleton {
   display: flex;
   flex-wrap: wrap;
@@ -11,8 +28,11 @@
     flex: 1.5 1 500px;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-    background-color: blueviolet;
-    animation: fadeIn 2s linear infinite;
+    background-color: #c4b5fd;
+    position: relative;
+    overflow: hidden;
+
+    @extend %animation;
     @media (max-width: 881px) {
       border-radius: 5px;
     }
@@ -34,8 +54,11 @@
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
-    background-color: blueviolet;
-    animation: fadeIn 2s linear infinite;
+    background-color: #c4b5fd;
+    position: relative;
+    overflow: hidden;
+
+    @extend %animation;
   }
 
   &__user {
@@ -43,8 +66,11 @@
     height: 3rem;
     margin-top: 0.5rem;
     border-radius: 5px;
-    background-color: blueviolet;
-    animation: fadeIn 2s linear infinite;
+    background-color: #c4b5fd;
+    position: relative;
+    overflow: hidden;
+
+    @extend %animation;
   }
 
   &__comments {
@@ -52,14 +78,8 @@
   }
 }
 
-@keyframes fadeIn {
-  0% {
-    background-color: blueviolet;
-  }
-  50% {
-    background-color: #8a2be270;
-  }
-  100% {
-    background-color: blueviolet;
+@keyframes fade {
+  to {
+    transform: translateX(100%);
   }
 }

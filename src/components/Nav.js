@@ -19,7 +19,9 @@ export default function Nav() {
   return (
     <>
       <nav className="nav">
-        <h4 className="nav__logo"> Instagram </h4>
+        <Link to="/" className="nav__logo">
+          Gallery
+        </Link>
         <div className="nav__items">
           <button
             className="nav__button"
