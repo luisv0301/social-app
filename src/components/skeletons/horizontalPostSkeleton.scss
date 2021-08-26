@@ -5,11 +5,12 @@
     inset: 0;
     transform: translateX(-100%);
     background: rgb(196, 181, 253);
+    background: rgb(196, 181, 253);
     background: linear-gradient(
       110deg,
-      rgba(196, 181, 253, 1) 11%,
-      rgba(241, 239, 250, 1) 47%,
-      rgba(196, 181, 253, 1) 76%
+      rgba(196, 181, 253, 1) 35%,
+      rgba(241, 239, 250, 0.5690651260504201) 47%,
+      rgba(196, 181, 253, 1) 60%
     );
     animation: fade 2s linear infinite;
   }
@@ -21,7 +22,7 @@
   margin: 2rem auto;
   width: Min(1000px, calc(100% - 2rem));
   border-radius: 5px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.192);
+  box-shadow: 0 6px 12px rgba(119, 70, 70, 0.192);
 
   &__img {
     height: 450px;

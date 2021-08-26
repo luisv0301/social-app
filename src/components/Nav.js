@@ -13,7 +13,8 @@ export default function Nav() {
   const [isInlineMessageActive, setIsInlineMessageActive] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const {
-    user: { displayName, photoURL, signOutWithGoogle },
+    user: { displayName, photoURL },
+    signOutWithGoogle,
   } = useUser();
 
   return (
